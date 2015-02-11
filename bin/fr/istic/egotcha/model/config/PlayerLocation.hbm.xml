@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+  PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+  
+  <hibernate-mapping>
+     
+     
+     
+     
+      <class name="fr.istic.egotcha.model.PlayerLocation" table="PlayerLocation">
+    <id name="id" type="int" column="id">
+     <generator class="native"/>
+    </id>
+    
+    <property name="x" column="x" type="double"/>
+      <property name="y" column="y" type="double"/>
+    <property name="date" column="date" type="date">
+      <meta attribute="field-description">date</meta>
+    </property>
+    
+    <!--   <many-to-one name="joueur" class="fr.istic.egotcha.model.Joueur" fetch="select">
+            <column name="id" not-null="true"/>
+        </many-to-one> -->
+    
+    
+   
+  </class>
+ 
+</hibernate-mapping>

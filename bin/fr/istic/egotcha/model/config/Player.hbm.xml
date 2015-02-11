@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+  PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+  
+  <hibernate-mapping>
+  <class name="fr.istic.egotcha.model.Player" table="player">
+    <id name="id" type="int" column="id">
+      <generator class="native"/>
+    </id>
+    <property name="pseudo" column="pseudo" type="string" not-null="true" />
+     <property name="password" column="password" type="string" not-null="true" />
+    <property name="firstname" column="firstnamePlayer" type="string" not-null="true" />
+    <property name="lastname" column="lastnamePlayer" type="string" not-null="true" />
+   
+    <property name="birthday" column="birthday" type="date">
+      <meta attribute="field-description">date de naissance</meta>
+    </property>
+    
+     <property name="mail" column="mail" type="string" not-null="true" />
+       
+  
+      
+        <set name="positions" cascade="all">
+        	<key column="idJoueur" not-null="true"/>
+         	<one-to-many class="fr.istic.egotcha.model.PlayerLocation"/>
+      	</set> 
+        
+  </class>
+ 
+ 
+</hibernate-mapping>
